@@ -58,6 +58,7 @@ asset activo identified by idActivo {
   o String idActivo
   o String detallesActivo
   o Double valorActivo
+  o Double cantidad
   o estado estadoDeActivo
   --> banco enteBancario optional
   o String numeroPoliza optional
