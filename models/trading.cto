@@ -21,7 +21,8 @@ participant usuario identified by idUsuario {
   o String segundoApellido
   o String email  optional 
   o String direccion
-  o Double balance 
+  o Double balance
+  o Double balances
 }
 
 /**
