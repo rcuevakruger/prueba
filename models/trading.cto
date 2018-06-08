@@ -22,7 +22,6 @@ participant usuario identified by idUsuario {
   o String email  optional 
   o String direccion
   o Double balance
-  o Double balances
 }
 
 /**
@@ -114,6 +113,7 @@ transaction Materializar {
 }
 
 transaction Traspaso {
-  --> usuario nuevoDueño
+  --> usuario nuevoDueno
+  --> usuario antiguoDueno
   --> activo Activo
 }
