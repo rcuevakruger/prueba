@@ -1,24 +1,21 @@
-/**
- * Access control rules for mynetwork
- */
 rule Default {
-    description: "Allow all participants access to all resources"
+    description: "Permitir a participantes acceso a recursos"
     participant: "ANY"
     operation: ALL
-    resource: "org.acme.trading.*"
+    resource: "com.cams.**"
     action: ALLOW
 }
 
 rule SystemACL {
-  description:  "System ACL to permit all access"
-  participant: "org.hyperledger.composer.system.Participant"
-  operation: ALL
-  resource: "org.hyperledger.composer.system.**"
-  action: ALLOW
+    description:  "Permitir acceso a recursos"
+    participant: "org.hyperledger.composer.system.Participant"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
 }
 
 rule NetworkAdminUser {
-    description: "Grant business network administrators full access to user resources"
+    description: "Permitir acceso total a administradores de sistema"
     participant: "org.hyperledger.composer.system.NetworkAdmin"
     operation: ALL
     resource: "**"
@@ -26,7 +23,7 @@ rule NetworkAdminUser {
 }
 
 rule NetworkAdminSystem {
-    description: "Grant business network administrators full access to system resources"
+    description: "Permitir acceso total a administradores de red"
     participant: "org.hyperledger.composer.system.NetworkAdmin"
     operation: ALL
     resource: "org.hyperledger.composer.system.**"
